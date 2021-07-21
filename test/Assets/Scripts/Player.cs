@@ -45,7 +45,9 @@ public class Player : MonoBehaviour
 
     DoubleJump doubleJump;
 
+    public GameObject playerModel;
 
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -79,6 +81,7 @@ public class Player : MonoBehaviour
             if (!isJumping)
             {
                 Jump();
+
             }
 
             else 
@@ -93,6 +96,8 @@ public class Player : MonoBehaviour
         //We constantly apply Y force to the player
         myController.Move(Vector3.up*yForce*Time.deltaTime); 
 
+
+
         
         if(!myController.isGrounded){
             //Gravity calculation
@@ -105,6 +110,8 @@ public class Player : MonoBehaviour
         {
             doubleJump.amountJumps = doubleJump.originalJumps;
             isJumping = false;
+
+            animator.SetBool("IsJumping", false);
         }
 
 
@@ -166,28 +173,60 @@ public class Player : MonoBehaviour
             }
         }
 
+        if(IsIdle())
+        {
+            //Idle Animation
+            animator.SetFloat("Speed", 0);
+
+        }
+
 
 
     }
 
+    bool IsIdle()   
+    {
+        if(!Input.GetKey(KeyCode.W) &&
+           !Input.GetKey(KeyCode.A) &&
+           !Input.GetKey(KeyCode.S) &&
+           !Input.GetKey(KeyCode.D) &&
+           !isJumping                 )
+        {
+            return true;
+        }
+
+        return false;
+    }
+
     void moveRight()
     {
+
         myController.Move(Vector3.right*Time.deltaTime*moveSpeed);
+        playerModel.transform.eulerAngles = new Vector3(0,90,0);
+        animator.SetFloat("Speed", 1);
+
     }
 
     void moveLeft() 
     {
         myController.Move(Vector3.left*Time.deltaTime*moveSpeed);
+        playerModel.transform.eulerAngles = new Vector3(0,270,0);
+        animator.SetFloat("Speed", 1);
+
     }
 
     void moveForward()
     {
         myController.Move(Vector3.forward*Time.deltaTime*moveSpeed);
+        playerModel.transform.eulerAngles = new Vector3(0,0,0);
+        animator.SetFloat("Speed", 1);
     }
 
     void moveBackward()
     {
         myController.Move(Vector3.back*Time.deltaTime*moveSpeed);
+        playerModel.transform.eulerAngles = new Vector3(0,180,0);
+        animator.SetFloat("Speed", 1);
     }
 
     void Jump()
@@ -195,9 +234,13 @@ public class Player : MonoBehaviour
         //Make the character
         yForce = jumpSpeed; 
         isJumping = true;
+        //Jump animation
 
         //Whenever the character jumps, the first jump counts as an actual jump
         doubleJump.amountJumps --;
+
+        //When isJumping = true, we also set it true for the animator
+        animator.SetBool("IsJumping", true);
     }
 
     void Dash(Vector3 direction)
