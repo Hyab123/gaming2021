@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
             if (!isJumping)
             {
                 Jump();
-
+                animator.SetTrigger("DoubleJump");
             }
 
             else 
@@ -89,6 +89,7 @@ public class Player : MonoBehaviour
                 if(doubleJump.amountJumps > 0)
                 {
                     Jump();
+
                 }
             }
         }

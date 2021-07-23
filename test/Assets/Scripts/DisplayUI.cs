@@ -1,16 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class LevelLoad : MonoBehaviour
-{
-    public int levelToLoad;
+public class DisplayUI : MonoBehaviour
+{   
+    public GameObject displayObject;
 
     // Start is called before the first frame update
     void Start()
     {
-        
         
     }
 
@@ -20,18 +18,11 @@ public class LevelLoad : MonoBehaviour
         
     }
 
-    public void LoadLevel()
-    {
-        SceneManager.LoadScene(levelToLoad);
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-
         if(other.tag == "Player")
         {
-            LoadLevel();
+            displayObject.SetActive(true);
         }
     }
-
 }
