@@ -34,4 +34,9 @@ public class LevelLoad : MonoBehaviour
         }
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
 }

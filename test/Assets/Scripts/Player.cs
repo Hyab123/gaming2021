@@ -81,15 +81,14 @@ public class Player : MonoBehaviour
             if (!isJumping)
             {
                 Jump();
-                animator.SetTrigger("DoubleJump");
             }
 
             else 
             {
                 if(doubleJump.amountJumps > 0)
                 {
+                    animator.SetTrigger("DoubleJump");
                     Jump();
-
                 }
             }
         }
@@ -107,7 +106,7 @@ public class Player : MonoBehaviour
 
 
         //If the player is on the ground, it is NOT jumping
-        if(myController.isGrounded)
+        if(myController.isGrounded && yForce < 0)
         {
             doubleJump.amountJumps = doubleJump.originalJumps;
             isJumping = false;
@@ -178,7 +177,6 @@ public class Player : MonoBehaviour
         {
             //Idle Animation
             animator.SetFloat("Speed", 0);
-
         }
 
 
