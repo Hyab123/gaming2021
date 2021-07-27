@@ -7,7 +7,7 @@ public class CoinManager : MonoBehaviour
 {
     public int coins;
     public Text coinText;
-
+    public AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +29,7 @@ public class CoinManager : MonoBehaviour
         coins += amount;
         print(coins);
         coinText.text = "" + coins;
+        audioManager.coinSound.PlayOneShot(audioManager.coinSound.clip);
     }
 
 }

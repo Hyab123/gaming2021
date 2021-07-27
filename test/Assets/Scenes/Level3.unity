@@ -644,6 +644,10 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6000025790208432819, guid: b66df5ffd9c424df1bf0897498794595, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000025790208432819, guid: b66df5ffd9c424df1bf0897498794595, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.3
       objectReference: {fileID: 0}
@@ -2874,7 +2878,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5a7c1cd96504f4dd2ad731fce6effda0, type: 2}
+  - {fileID: 2100000, guid: b5def8420982348f7885c81f1c0396d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2912,8 +2916,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519376048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.6, y: -50.6, z: 0}
-  m_LocalScale: {x: 99999, y: 999, z: 99999}
+  m_LocalPosition: {x: -115.125, y: -50.6, z: 159.9929}
+  m_LocalScale: {x: 54.661564, y: 999, z: 53.418392}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -2936,6 +2940,10 @@ PrefabInstance:
     - target: {fileID: 6000025790208432819, guid: b66df5ffd9c424df1bf0897498794595, type: 3}
       propertyPath: m_LocalScale.x
       value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000025790208432819, guid: b66df5ffd9c424df1bf0897498794595, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 6000025790208432819, guid: b66df5ffd9c424df1bf0897498794595, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3212,6 +3220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coins: 0
   coinText: {fileID: 1169526982}
+  audioManager: {fileID: 0}
 --- !u!4 &1693443344
 Transform:
   m_ObjectHideFlags: 0
@@ -3300,6 +3309,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6000025790208432819, guid: b66df5ffd9c424df1bf0897498794595, type: 3}
       propertyPath: m_LocalScale.x
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000025790208432819, guid: b66df5ffd9c424df1bf0897498794595, type: 3}
+      propertyPath: m_LocalScale.y
       value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 6000025790208432819, guid: b66df5ffd9c424df1bf0897498794595, type: 3}
