@@ -39,6 +39,11 @@ public class Player : MonoBehaviour
 
     public bool canDash;
     
+    // [Header("First Person")]
+
+    // float horizontal = Input.GetAxis("Horizontal");
+    // float vertical = Input.GetAxis("Vertical");
+
     [Header("Refrences")]
 
     CharacterController myController;
